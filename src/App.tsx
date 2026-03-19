@@ -169,6 +169,7 @@ function App() {
           onLoadSample={() => handleLoadSample(false)}
           onChangeName={(name) => name.length > 0 && setName(name)}
           onChangeColor={() => setHue(generateHue())}
+          editor={editor}
         />
         <ReadCodeConfirm
           isOpen={readCodeConfirmOpen}
