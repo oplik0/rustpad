@@ -43,7 +43,8 @@ function App() {
   });
   const [editor, setEditor] = useState<editor.IStandaloneCodeEditor>();
   const [darkMode, setDarkMode] = useLocalStorageState("darkMode", {
-    defaultValue: false,
+    defaultValue: () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches,
   });
   const rustpad = useRef<Rustpad>();
   const id = useHash();
